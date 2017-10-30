@@ -1,0 +1,46 @@
+# Run My Jupyter Notebook
+# 以具有"sudo privilege”的方式啟動 base image
+# --user root -e GRANT_SUDO=yes
+docker run -it --user root -e GRANT_SUDO=yes --rm -v d:/:/winDiskD -w /winDiskD -p 9999:8888 cowtwo/jupyter_notebook:textract_ok
+
+# 啟動 container 的 bash (Command Line Interface)
+docker exec -it <container_id> bash
+
+# 查詢Local目前可用的 Docker 影像（image）
+docker images
+
+# 查詢目前正在執行的 Docker 應用程式
+docker ps
+
+# 停止指定的 Docker 應用程式
+docker stop container_id
+
+# 刪除 Local 端的 image
+# -f 表示 force
+docker rmi -f image_id
+
+# Remove/Clean all images and containers
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)
+
+# Pull image form docker hub
+# (part1 is tag name，若沒註明tag，那default會用最新的 latest)
+docker pull cowtwo/cowtwo-demo:part1
+
+
+# Build docker image
+docker build -t image_name .
+
+# 使用 docker 指令登入
+docker login
+
+# Tag and Push image to docker hub
+docker tag friendlyhello guozhaowang/gtwang-demo:part1
+docker push guozhaowang/gtwang-demo:part1
+
+# Start the X server
+# Open a Cygwin terminal and run
+XWin :0 -ac -listen tcp -multiwindow
+
