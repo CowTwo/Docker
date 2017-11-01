@@ -8,7 +8,7 @@ docker run -it --user root -e GRANT_SUDO=yes --rm -v d:/:/winDiskD -w /winDiskD 
 XWin :0 -ac -listen tcp -multiwindow
 
 # Run My Omnetpp
-docker run --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/omnetpp:1.0_base
+docker run --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/omnetpp:1.0_Base
 
 # ±Ò°Ê container ªº bash (Command Line Interface)
 docker exec -it <container_id> bash
