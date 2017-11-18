@@ -12,4 +12,8 @@ RUN apt-get install -y build-essential gdb
 # Install ECLIPSE CDT (C/C++ Developing Tool)
 RUN apt-get install -y eclipse eclipse-cdt g++
 
+#Install openssl (developing version)
+RUN apt-get install -y libssl-dev
 
+#Install libconfig-dev (developing version)
+RUN apt-get install -y libconfig-dev
