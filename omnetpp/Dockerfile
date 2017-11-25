@@ -17,3 +17,10 @@ RUN apt-get install -y libssl-dev
 
 #Install libconfig-dev (developing version)
 RUN apt-get install -y libconfig-dev
+
+#Install Eclipse CDT with Profiling tools
+RUN apt-get update
+RUN apt-get install -y eclipse-cdt-perf
+RUN apt-get install -y eclipse-cdt-valgrind
+RUN cp /usr/lib/linux-tools/4.10.0-1009-gcp/*  /usr/bin/
+

@@ -8,7 +8,7 @@ docker run -it --user root -e GRANT_SUDO=yes --rm -v d:/:/winDiskD -w /winDiskD 
 XWin :0 -ac -listen tcp -multiwindow
 
 # Run My Omnetpp (+ Eclipse)
-docker run --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/omnetpp
+docker run --privileged --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/omnetpp
 
 # Run ubuntu
 docker run --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 ubuntu
