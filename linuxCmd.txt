@@ -1,1 +1,6 @@
+# Perf - 如果要檢測 cache miss event ，需要先取消 kernel pointer 的禁用
+sh -c " echo 0 > /proc/sys/kernel/kptr_restrict"
+
+
+# Show system environment path
 echo $PATH
