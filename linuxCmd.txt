@@ -1,6 +1,17 @@
 # Perf - 如果要檢測 cache miss event ，需要先取消 kernel pointer 的禁用
 sh -c " echo 0 > /proc/sys/kernel/kptr_restrict"
 
+# 查看目前執行的是那個使用者的權限
+whoami
 
 # Show system environment path
 echo $PATH
+
+# find: 直接到disk搜尋
+find -name pdma.c
+
+# 多檔案搜尋 關鍵字
+grep ‘keyword’ * -r
+
+# 捷徑 shortcut
+sudo ln -s /opt/pycharm-4.0.1/bin/pycharm.sh /usr/bin/pycharm

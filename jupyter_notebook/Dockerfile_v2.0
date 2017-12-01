@@ -1,0 +1,23 @@
+FROM cowtwo/jupyter_notebook:textract_ok
+
+MAINTAINER CowTwo 
+
+USER root
+
+# Install scapy-python3
+RUN pip install scapy-python3
+
+# Install pycharm
+RUN apt-get update && \
+    apt-get install -y default-jdk
+
+COPY pycharm/pycharm-community-2017.2.4.tar.gz /opt/
+
+RUN cd /opt/ && \
+	tar -xzvf /opt/pycharm-community-2017.2.4.tar.gz && \
+	ln -s /opt/pycharm-community-2017.2.4/bin/pycharm.sh /usr/bin/pycharm
+	
+# 啟動 PyCharm 利用 GUI 設定 PyCharm 的 Project Interpreter 使其與 Jupyter Notebook 所使用的 Interpreter 一致
+# 將相關的 container 的環境，利用 docker commit 將其 備份到 dcoker image
+	
+USER $NB_USER
