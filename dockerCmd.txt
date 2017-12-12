@@ -43,6 +43,9 @@ docker pull cowtwo/cowtwo-demo:part1
 # Build docker image
 docker build -t image_name .
 
+# 當只能用 GUI 設定Container環境時
+docker commit .....
+
 # 使用 docker 指令登入
 docker login
 
