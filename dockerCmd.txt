@@ -1,7 +1,7 @@
 # Run My Jupyter Notebook
 # 以具有"sudo privilege”的方式啟動 base image
 # --user root -e GRANT_SUDO=yes
-docker run -it --user root -e GRANT_SUDO=yes --rm -v d:/:/winDiskD -w /winDiskD -p 9999:8888 -e DISPLAY=10.0.75.1:0 cowtwo/jupyter_notebook
+docker run -it --user root -e GRANT_SUDO=yes --rm -v d:/:/work -w /work -p 9999:8888 -e DISPLAY=10.0.75.1:0 cowtwo/jupyter_notebook
 
 # Start the X server
 # Open a Cygwin terminal and run

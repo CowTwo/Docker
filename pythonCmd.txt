@@ -1,0 +1,6 @@
+# Installation by pip
+pip install pkg_name
+
+# Installation manually
+python setup.py install
+

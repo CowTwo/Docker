@@ -15,3 +15,6 @@ grep ‘keyword’ * -r
 
 # 捷徑 shortcut
 sudo ln -s /opt/pycharm-4.0.1/bin/pycharm.sh /usr/bin/pycharm
+
+#解開壓縮檔的檔案到目前的目錄
+tar -xzvf 檔案名稱.tgz
