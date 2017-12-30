@@ -1,6 +1,11 @@
 # Perf - 如果要檢測 cache miss event ，需要先取消 kernel pointer 的禁用
 sh -c " echo 0 > /proc/sys/kernel/kptr_restrict"
 
+# Perf example command for omnet program
+perf record ../src/z_ct_perf_trial_dbg -f omnetpp.ini -n  .:../src   -u Cmdenv  --sim-time-limit=1s
+perf stat --repeat 3 ../src/z_ct_perf_trial_dbg -f omnetpp.ini -n  .:../src   -u Cmdenv  --sim-time-limit=1s
+
+
 # 查看目前執行的是那個使用者的權限
 whoami
 
