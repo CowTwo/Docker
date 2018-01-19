@@ -10,6 +10,12 @@ XWin :0 -ac -listen tcp -multiwindow
 # Run My Omnetpp (+ Eclipse)
 docker run --privileged --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/omnetpp
 
+# Run Gem5
+docker run --privileged --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 cowtwo/gem5
+# Start File Browser / Text editor
+nautilus --browser
+gedit
+
 # Run ubuntu
 docker run --security-opt seccomp=unconfined --rm -it -v d:/:/work -e DISPLAY=10.0.75.1:0 ubuntu
 
