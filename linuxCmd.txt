@@ -1,3 +1,10 @@
+﻿# Mount / Umount
+cd ~/ \
+sudo mkdir d_drive_in_win \
+sudo mount -t vboxsf D_DRIVE ~/d_drive_in_win
+
+sudo umount -t vboxsf D_DRIVE /d_drive_in_win
+
 # Perf - 如果要檢測 cache miss event ，需要先取消 kernel pointer 的禁用
 sh -c " echo 0 > /proc/sys/kernel/kptr_restrict"
 
