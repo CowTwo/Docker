@@ -1,0 +1,17 @@
+FROM ubuntu
+MAINTAINER CowTwo
+
+# get dependencies
+RUN apt-get update
+RUN dpkg --add-architecture i386
+RUN apt-get install -y libc6-dev-i386
+RUN apt-get install -y build-essential git-core m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev swig python-dev python
+RUN apt-get clean
+
+# checkout repo with mercurial
+WORKDIR /usr/local/src
+RUN git clone https://gem5.googlesource.com/public/gem5
+# build it
+WORKDIR /usr/local/src/gem5
+RUN scons build/ARM/gem5.opt --force-lto
+ENTRYPOINT bash
