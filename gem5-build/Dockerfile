@@ -4,7 +4,9 @@ MAINTAINER cowtwo
 
 LABEL Description="Docker image for gem5"
 
-
+########################################################################################
+# Env setup for full-system mode (Linux kernel running on ARM which simulated by gem5)
+########################################################################################
 # Install toolchain and test tools
 RUN apt-get install -y gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu device-tree-compiler bc telnet
 
@@ -39,6 +41,11 @@ RUN cp /usr/local/src/linux/vmlinux /usr/local/src/gem5/system/arm/binaries
 RUN cp /usr/local/src/gem5/system/arm/simple_bootloader/boot_emm.arm  /usr/local/src/gem5/system/arm/binaries
 RUN cp /usr/local/src/gem5/system/arm/aarch64_bootloader/boot_emm.arm64  /usr/local/src/gem5/system/arm/binaries
 RUN cp /usr/local/src/gem5/system/arm/dt/armv7_gem5_v1_1cpu.dtb  /usr/local/src/gem5/system/arm/binaries
+
+####################################################################################
+# Env setup for full-system mode (bare-metal running on ARM which simulated by gem5)
+#################################################################################### 
+RUN apt-get install -y gcc-arm-none-eabi
 
 # Finished
 WORKDIR /usr/local/src/gem5
