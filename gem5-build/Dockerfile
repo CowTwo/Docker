@@ -48,4 +48,6 @@ RUN cp /usr/local/src/gem5/system/arm/dt/armv7_gem5_v1_1cpu.dtb  /usr/local/src/
 RUN apt-get install -y gcc-arm-none-eabi
 
 # Finished
+RUN apt-get install -y vim
+
 WORKDIR /usr/local/src/gem5
