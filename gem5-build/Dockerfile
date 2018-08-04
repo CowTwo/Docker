@@ -5,13 +5,10 @@ MAINTAINER cowtwo
 LABEL Description="Docker image for gem5"
 
 ######################################################################################
-# Env setup for cscope + vim
+# Env setup for vim
 ######################################################################################
 RUN apt-get install -y cscope
-WORKDIR /root
-RUN mkdir .vim
-RUN cd .vim
-RUN mkdir plugin
-COPY cscope_plugin/ /root/.vim/plugin/
+RUN apt-get install -y exuberant-ctags
+COPY vimInHome/ /root/
  
 WORKDIR /usr/local/src/gem5
