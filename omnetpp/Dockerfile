@@ -25,7 +25,7 @@ RUN chmod +x ./inet_featuretool
 RUN opp_featuretool repair
 RUN make makefiles
 RUN make clean
-RUN make
+RUN make MODE=debug
 # Make bash script executable
 RUN chmod +x ./src/run_inet
 RUN chmod +x ./examples/wireless/aggregationtest/run
