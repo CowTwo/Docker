@@ -33,4 +33,9 @@ RUN chmod +x ./examples/wireless/aggregationtest/run
 # Finished, we can test the result by 
 # change directory to /usr/omnetpp/inet/examples/wireless/aggregationtest/ and execute ./run
 
+######################################################################################
+# Modify systemc makefile.config to match my Env to facilitate building
+######################################################################################
+COPY systemc/Makefile.config /usr/local/systemc232/examples/build-unix/
+
 WORKDIR /usr/omnetpp
