@@ -1,21 +1,17 @@
-FROM cowtwo/jupyter_notebook:v2.0
+FROM cowtwo/jupyter_notebook:v2.1
 
 MAINTAINER CowTwo 
 
 USER root
 
-# Install tesseract-ocr
-RUN apt-get update && \
-    apt-get install -y tesseract-ocr-all
-
-# Copy pytube into /cowtwo/pytube
+# download latest pytube into /cowtwo/pytube_20181104 
+# and then install it
 RUN cd /cowtwo && \
-    mkdir pytube-6.2.2
+    mkdir pytube_20181104 && \
+	cd pytube_20181104 && \
+    git clone git://github.com/nficano/pytube.git && \
+	cd pytube && \
+	python setup.py install
 
-COPY pytube-6.2.2/ /cowtwo/pytube-6.2.2/
-
-# Install textract (with cowtwo's modification)
-RUN cd /cowtwo/pytube-6.2.2/ && \
-    python setup.py install	
 
 USER $NB_USER
