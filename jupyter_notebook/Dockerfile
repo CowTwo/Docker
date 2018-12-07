@@ -13,5 +13,7 @@ RUN cd /cowtwo && \
 	cd pytube && \
 	python setup.py install
 
+# Python install PyQt5 to facilitate matplot in bash env
+RUN pip install PyQt5
 
 USER $NB_USER
