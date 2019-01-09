@@ -16,4 +16,7 @@ RUN cd /cowtwo && \
 # Python install PyQt5 to facilitate matplot in bash env
 RUN pip install PyQt5
 
+# Python install bitstruct for structure pack / unpack
+RUN pip install bitstruct
+
 USER $NB_USER
