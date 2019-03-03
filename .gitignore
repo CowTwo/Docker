@@ -1,0 +1,12 @@
+# vim temp file
+*.swp
+
+# cscope
+cscope.*
+tags
+
+# temp file
+*.tmp
+
+vimInHome/
+
