@@ -27,3 +27,9 @@ RUN apt-get install -y plantuml
 RUN apt-get install -y eog
 #--
 
+#++ Drive : pull from google drive
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository -y ppa:twodopeshaggy/drive
+RUN apt-get update
+RUN apt-get install -y drive
+#--
