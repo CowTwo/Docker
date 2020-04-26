@@ -48,3 +48,6 @@ WORKDIR /usr/local/lib/python2.7/dist-packages/blogger/
 RUN git config --global user.email "ct@test" && git config --global user.name "cowtwo"
 RUN git init && git add --all && git commit -m "initialize git tracking"
 
+#++ tshark
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tshark
+#--
