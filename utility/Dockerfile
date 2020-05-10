@@ -51,3 +51,8 @@ RUN git init && git add --all && git commit -m "initialize git tracking"
 #++ tshark
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tshark
 #--
+
+#++ matplotlib
+RUN apt-get update
+RUN apt-get install -y python3-matplotlib
+#--
