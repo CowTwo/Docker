@@ -56,3 +56,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tshark
 RUN apt-get update
 RUN apt-get install -y python3-matplotlib
 #--
+
+#++ Build env for wireshark/tshark
+RUN apt-get update
+RUN apt-get install -y cmake
+RUN apt-get install -y libglib2.0-dev
+RUN apt-get install -y libgcrypt20-dev
+RUN apt-get install -y qttools5-dev qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev
+RUN apt-get install -y libpcap-dev
+RUN apt-get install -y flex bison
+RUN apt-get install -y libc-ares-dev
+#--
+
