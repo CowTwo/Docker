@@ -15,4 +15,9 @@ RUN chmod 664 /opt/conda/lib/python3.6/site-packages/matplotlib/mpl-data/matplot
 RUN rm -rf ~/.cache/matplotlib
 ####--
 
+####++ Install scrapy
+RUN pip install --upgrade pip
+RUN pip install Scrapy
+####--
+
 USER $NB_USER
