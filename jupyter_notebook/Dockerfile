@@ -20,4 +20,9 @@ RUN pip install --upgrade pip
 RUN pip install Scrapy
 ####--
 
+####++ To support chinese font for pandoc translating html to pdf file
+RUN apt-get update
+RUN apt-get install fonts-moe-standard-song
+####--
+
 USER $NB_USER
