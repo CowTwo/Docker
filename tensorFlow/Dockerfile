@@ -9,4 +9,8 @@ RUN apt-get install -y python3-matplotlib
 #--
 RUN pip install sklearn
 RUN pip install opencv-python-headless
+
+RUN apt-get update
+RUN apt-get install -y graphviz
+RUN pip install pydot
      
