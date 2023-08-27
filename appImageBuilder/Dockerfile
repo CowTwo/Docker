@@ -4,6 +4,9 @@ LABEL Description="AppImage Builder Env"
 
 RUN apt-get update
 
+# install vim 
+RUN apt-get install -y vim
+
 # install AppImage builder tools
 RUN apt-get install -y binutils coreutils desktop-file-utils fakeroot fuse libgdk-pixbuf2.0-dev patchelf python3-pip python3-setuptools squashfs-tools strace util-linux zsync
 RUN pip3 install appimage-builder
